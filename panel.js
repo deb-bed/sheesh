@@ -58,9 +58,12 @@ document.getElementById('generateBtn').addEventListener('click', function() {
     // Tworzenie obiektu Blob z zawartością aplikacji
     const blob = new Blob([appContent], { type: 'text/html' });
     
-    // Tworzenie linku do pobrania pliku
+    // Tworzenie linku do pobrania pliku dowodnowy.html
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = 'index.html'; // Nazwa pliku HTML
+    link.download = 'dowodnowy.html'; // Plik o nazwie dowodnowy.html
     link.click(); // Automatyczne kliknięcie linku, co spowoduje pobranie pliku
+
+    // Przekierowanie na stronę index.html
+    window.location.href = "index.html"; // Przekierowanie na index.html
 });
