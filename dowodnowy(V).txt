@@ -252,25 +252,28 @@
                 <p>Rzeczpospolita<br>Polska</p>
             </div>
         </section>
- <section id="praw">
-             <p style="margin-top: -2px;"><strong></strong> WPISZ IMIE</p>            
-     <p2 class="sub"style="position: relative; top: -13px;">Imię (Imiona)</p2><br>
-            <p style="transform: translateY(-2px);"><strong></strong> WPISZ NAZWISKO </p>   
-    <style>
-  .sub {
-    transform: translateY(-15px); /* 10px wyżej niż wcześniej */
-  }
-</style>
+<section id="praw">
+    <!-- Imię -->
+    <p style="margin-top: -2px;"><strong></strong> ${formData.firstName}</p>
+    <p2 class="sub" style="position: relative; top: -13px;">Imię (Imiona)</p2><br>
 
-<p class="sub">Nazwisko</p><br>
-            <p style="transform: translateY(-13px);">POLSKIE</p>
-            <p2 class="sub"style="position: relative; top: -28px;">Obywatelstwo</p2><br>
-            <p style="transform: translateY(-22px);"><strong></strong> wpisz date uro</p>            
-     <p2 class="sub"style="position: relative; top: -34px;">Data urodzenia</p2><br>
-            <p style="transform: translateY(-31px);"><strong></strong> wpisz pesel</p>            
-     <p2 class="sub"style="position: relative; top: -43px;">Numer PЕSEL</p2><br>
-        </section>
-</main>
+    <!-- Nazwisko -->
+    <p style="transform: translateY(-2px);"><strong></strong> ${formData.lastName}</p>
+    <p class="sub">Nazwisko</p><br>
+
+    <!-- Obywatelstwo -->
+    <p style="transform: translateY(-13px);">POLSKIE</p>
+    <p2 class="sub" style="position: relative; top: -28px;">Obywatelstwo</p2><br>
+
+    <!-- Data urodzenia -->
+    <p style="transform: translateY(-22px);"><strong></strong> ${formData.dob}</p>
+    <p2 class="sub" style="position: relative; top: -34px;">Data urodzenia</p2><br>
+
+    <!-- Numer PESEL -->
+    <p style="transform: translateY(-31px);"><strong></strong> ${formData.pesel}</p>
+    <p2 class="sub" style="position: relative; top: -43px;">Numer PESEL</p2><br>
+</section>
+
 
 <section id="bottom" style="display: flex; height: 20px; overflow: hidden; transform: translateY(0px);">
 
@@ -301,14 +304,13 @@
 
         <img src="https://ib05lvtzg55be6a6c6kpg3.ct8.pl/apka-3-0/dowod_files/arrow1.svg" alt="arrow" id="rotation" style="transform: rotate(-90deg);">
     </section>
-    <div id="rogo">
-
+   <div id="rogo">
   <div class="content">
 
     <!-- Sekcja bez linii przed "Nazwisko rodowe" -->
     <section class="dana">
       <p class="info">Nazwisko rodowe</p>
-      <p class="main"><strong></strong>MICHALAK</p>
+      <p class="main"><strong></strong><span id="maidenName"></span></p>
     </section>
     <!-- Koniec sekcji bez linii -->
 
@@ -316,45 +318,49 @@
 
     <section class="dana">
       <p class="info">Płeć</p>
-      <p class="main"><strong></strong>MĘŻCZYZNA</p>
+      <p class="main"><strong></strong><span id="gender"></span></p>
     </section>
 
     <p class="krecha"></p>
 
     <section class="dana">
       <p class="info">Nazwisko rodowe ojca</p>
-      <p class="main"><strong></strong>MICHALAK</p>
+      <p class="main"><strong></strong><span id="fatherMaidenName"></span></p>
     </section>
 
     <p class="krecha"></p>
 
     <section class="dana">
       <p class="info">Nazwisko rodowe matki</p>
-      <p class="main"><strong></strong>KRÓL</p>
+      <p class="main"><strong></strong><span id="motherMaidenName"></span></p>
     </section>
 
     <p class="krecha"></p>
 
     <section class="dana">
       <p class="info">Miejsce urodzenia</p>
-      <p class="main"><strong></strong>KIELCE</p>
+      <p class="main"><strong></strong><span id="birthPlace"></span></p>
     </section>
 
     <p class="krecha"></p>
 
     <section class="dana">
       <p class="info">Adres zameldowania na pobyt stały</p>
-      <p class="main"><strong></strong>UL. DOMASZOWSKA 57 25/320, KIELCE</p>
+      <p class="main"><strong></strong><span id="address"></span></p>
     </section>
       
     <p class="krecha"></p>
 
     <section class="dana">
       <p class="info">Data zameldowania na pobyt stały</p>
-      <p class="main"><strong></strong>2021-07-14</p>
+      <p class="main"><strong></strong><span id="residenceDate"></span></p>
     </section>
 
   </div>
+</div>
+
+<script src="app.js"></script>
+
 
 </div>
 
@@ -461,29 +467,37 @@
         </section>
         <section id="danedowodu" style="display: none;">
             <div id="szaro"></div>
-           <section id="danedowodowe">
-    <section>
-        <p id="danetitle">Dane dowodu osobistego</p>
-        <section id="danebox">
-            <section class="dana">
-                <p class="info">Seria i numer</p>
-                <p class="p3 seria">TRF894293<button id="kopiuj">Kopiuj</button></p>
-            </section>
-            <p class="krecha2"></p>
-            <section class="dana">
-                <p class="info">Organ wydający</p>
-                <p class="p3">PREZYDENT MIASTA KIELCE</p>
-            </section>
-            <p class="krecha2"></p>
-            <section class="dana">
-                <p class="info">Termin ważności</p>
-                <p class="p3">2032-06-17</p>
-            </section>
-            <p class="krecha2"></p>
-            <section class="dana">
-                <p class="info">Data wydania</p>
-                <p class="p3">2022-06-17</p>
-            </section>
+         <div id="rogo">
+  <div class="content">
+    <!-- Sekcja bez linii przed "Seria i numer" -->
+    <section class="dana">
+      <p class="info">Seria i numer</p>
+      <p class="p3 seria" id="seriaNumer"><strong></strong></p>
+    </section>
+    <p class="krecha2"></p>
+
+    <section class="dana">
+      <p class="info">Organ wydający</p>
+      <p class="p3" id="organWydajacy"><strong></strong></p>
+    </section>
+    <p class="krecha2"></p>
+
+    <section class="dana">
+      <p class="info">Termin ważności</p>
+      <p class="p3" id="terminWaznosci"><strong></strong></p>
+    </section>
+    <p class="krecha2"></p>
+
+    <section class="dana">
+      <p class="info">Data wydania</p>
+      <p class="p3" id="dataWydania"><strong></strong></p>
+    </section>
+    <p class="krecha2"></p>
+  </div>
+</div>
+
+<script src="app.js"></script>
+
         </section>
     </section>
     <section id="bottooom">
@@ -541,29 +555,36 @@
         <p id="danetitle">Dane mDowodu</p>
         <section id="danebox">
             <section class="dana">
-                <p class="info">Seriа i numer</p>
-                <p class="p4 seria">TRF894293<button id="kopiuj">Kopiuj</button></p>
+                <p class="info">Seria i numer</p>
+                <p class="p4 seria" id="seriaNumerMdowodu"><strong></strong></p>
+                <button id="kopiuj">Kopiuj</button>
             </section>
             <p class="krecha2"></p>
             <section class="dana">
-                <p class="info">Termin wаżności</p>
-                <p class="p4"><strong></strong> 2032-06-17</p>
+                <p class="info">Termin ważności</p>
+                <p class="p4" id="terminWaznosciMdowodu"><strong></strong></p>
             </section>
             <p class="krecha2"></p>
             <section class="dana">
-                <p class="info">Data wydaniа</p>
-                <p class="p4"><strong></strong> 2022-06-17</p>
+                <p class="info">Data wydania</p>
+                <p class="p4" id="dataWydaniaMdowodu"><strong></strong></p>
             </section>
             <p class="krecha2"></p>
             <section class="dana">
-                <p class="info">Imię ojcа</p>
-                <p class="p4"><strong></strong> GRZEGORZ</p>
+                <p class="info">Imię ojca</p>
+                <p class="p4" id="imieOjca"><strong></strong></p>
             </section>
             <p class="krecha2"></p>
             <section class="dana">
-                <p class="info">Imię mаtki</p>
-                <p class="p4"><strong></strong> AGNIESZKA</p>
+                <p class="info">Imię matki</p>
+                <p class="p4" id="imieMatki"><strong></strong></p>
             </section>
+        </section>
+    </section>
+</section>
+
+<script src="app.js"></script>
+
         </section>
     </section>
     <section id="bottooom">
