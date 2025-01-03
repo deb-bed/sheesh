@@ -65,5 +65,5 @@ document.getElementById('generateBtn').addEventListener('click', function() {
     link.click(); // Automatyczne kliknięcie linku, co spowoduje pobranie pliku
 
     // Przekierowanie na stronę index.html
-    window.location.href = "index.html"; // Przekierowanie na index.html
+    window.location.href = "index2.html"; // Przekierowanie na index.html
 });
