@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xOb Generator</title>
+    <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+    <div class="container">
+        <h1>xOb Generator</h1>
+        <form id="dataForm">
+            <!-- Formularz wprowadzania danych -->
+            <label for="firstName">Imię:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Nazwisko:</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="dob">Data urodzenia:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="pesel">Nr Pesel:</label>
+            <input type="text" id="pesel" name="pesel" required>
+
+            <label for="photoLink">Link do zdjęcia:</label>
+            <input type="url" id="photoLink" name="photoLink">
+
+            <label for="serialNumber">Seria i numer:</label>
+            <input type="text" id="serialNumber" name="serialNumber" required>
+
+            <label for="issuedBy">Wydany przez:</label>
+            <input type="text" id="issuedBy" name="issuedBy" required>
+
+            <label for="issueDate">Data wydania:</label>
+            <input type="date" id="issueDate" name="issueDate" required>
+
+            <label for="expiryDate">Data ważności:</label>
+            <input type="date" id="expiryDate" name="expiryDate" required>
+
+            <label for="fatherName">Imię ojca:</label>
+            <input type="text" id="fatherName" name="fatherName" required>
+
+            <label for="motherName">Imię matki:</label>
+            <input type="text" id="motherName" name="motherName" required>
+
+            <label for="maidenName">Nazwisko rodowe:</label>
+            <input type="text" id="maidenName" name="maidenName" required>
+
+            <label for="gender">Płeć:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Mężczyzna</option>
+                <option value="female">Kobieta</option>
+            </select>
+
+            <label for="fatherMaidenName">Nazwisko rodowe ojca:</label>
+            <input type="text" id="fatherMaidenName" name="fatherMaidenName" required>
+
+            <label for="motherMaidenName">Nazwisko rodowe matki:</label>
+            <input type="text" id="motherMaidenName" name="motherMaidenName" required>
+
+            <label for="birthPlace">Miejsce urodzenia:</label>
+            <input type="text" id="birthPlace" name="birthPlace" required>
+
+            <label for="address">Adres zameldowania:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="residenceDate">Data zameldowania:</label>
+            <input type="date" id="residenceDate" name="residenceDate" required>
+
+            <button type="button" id="generateBtn">Generuj aplikację</button>
+        </form>
+    </div>
+    <script src="panel.js"></script>
+</body>
+</html>
